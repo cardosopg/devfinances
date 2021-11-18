@@ -5,55 +5,56 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+  <!-- Styles & Title -->
   <link rel="stylesheet" href="./styles.css" />
   <title>dev.finance$</title>
 </head>
 
 <body>
 
-  <header>
+  <header id="logo">
     <img src="./assets/logo.svg" alt="Logo Dev Finance">
   </header>
 
   <main class="container">
-
-    <section id="balance">
+    <section id="financialBalance">
       <h2 class="sr-only">Balanço</h2>
-      <div class="card">
+      <div class="card incomes">
         <h3>
           <span>Entradas</span>
           <img src="./assets/income.svg" alt="Imagem de Entradas">
         </h3>
-        <p>R$ 387,00</p>
+        <p id="incomeDisplay">R$ 387,00</p>
       </div>
-      <div class="card">
+      <div class="card expenses">
         <h3>
           <span>Saídas</span>
           <img src="./assets/expense.svg" alt="Imagem de Saídas">
         </h3>
-        <p>R$ 334,09</p>
+        <p id="expensesDisplay">R$ 334,09</p>
       </div>
       <div class="card total">
         <h3>
           <span>Total</span>
           <img src="./assets/total.svg" alt="Imagem do Total">
         </h3>
-        <p>R$ 46,98</p>
+        <p id="totalDisplay">R$ 46,98</p>
       </div>
     </section>
-    
+
     <a 
       href="#" 
-      class="button new"
+      class="button newTransaction"
       onclick="Modal.open()"
     >
       + Nova transação
     </a>
 
-    <section id="transaction">
+    <section id="transactionsTable">
       <h2 class="sr-only">Transações</h1>
         <table id="data-table">
           <thead>
@@ -65,30 +66,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="description">Agua</td>
-              <td class="expense">R$ 77,16</td>
-              <td class="date">10/2/2022</td>
-              <td>
-                <img src="./assets/minus.svg" alt="Remover transação">
-              </td>
-            </tr>
-            <tr>
-              <td class="description">Luz</td>
-              <td class="expense">R$ 257,63</td>
-              <td class="date">10/2/2022</td>
-              <td>
-                <img src="./assets/minus.svg" alt="Remover transação">
-              </td>
-            </tr>
-            <tr>
-              <td class="description">Criação de Website</td>
-              <td class="income">R$ 387,00</td>
-              <td class="date">10/2/2022</td>
-              <td>
-                <img src="./assets/minus.svg" alt="Remover transação">
-              </td>
-            </tr>
+          <!-- JS -->
           </tbody>
         </table>
     </section>
@@ -98,10 +76,10 @@
     <div class="modal">
       <div id="form">
         <h2>Nova Transação</h2>
-        <form action="">
+        <form action="" onsubmit="Form.submit(event)">
           <div class="input-group">
             <label for="description" class="sr-only">Descrição</label>
-            <input 
+            <input    
               type="text"
               id="description"
               name="description"
@@ -147,20 +125,7 @@
     <h3>dev.finance$</h3>
   </footer>
 
-  <script>
-      const Modal = {
-        open() {
-          document
-          .querySelector('.modal-overlay')
-          .classList.add("active")
-        },
-        close() {
-          document
-          .querySelector('.modal-overlay')
-          .classList.remove("active")
-        }
-      }
-  </script>
+  <script src="./script.js"></script>
 </body>
 
 </html>

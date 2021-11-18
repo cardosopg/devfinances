@@ -58,9 +58,9 @@ a:hover {
   color: var(--light-blue);
 }
 
-.button.new {
+.button.newTransaction {
   display: inline-block;
-  margin-bottom: .8rem;  
+  padding: 1rem;  
 }
 
 button {
@@ -106,11 +106,11 @@ header {
 }
 
 /* Balance section =======*/
-#balance {
+#financialBalance {
   margin-top: -8rem;
 }
 
-#balance h2 {
+#financialBalance h2 {
   color: white;
   margin-top: 0;
 }
@@ -145,7 +145,7 @@ header {
 }
 
 /* Table section =======*/
-#transaction {
+#transactionsTable {
   display: block;
   overflow-x: auto;
 }
@@ -192,6 +192,14 @@ td.expense {
   color: var(--red-dragon);
 }
 
+td.date {
+  color: var(--light-blue);
+}
+
+td img {
+  cursor: pointer;
+}
+
 /* Footer =======*/
 footer h3 {
   text-align: center;
@@ -213,6 +221,7 @@ footer h3 {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
+  z-index: 999;
 }
 
 .modal-overlay.active {
@@ -267,7 +276,7 @@ input {
     font-size: 87.5%;
   }
 
-  #balance {
+  #financialBalance {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
